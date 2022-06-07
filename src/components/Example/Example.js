@@ -1,6 +1,7 @@
+
 import { useState } from "react";
 
-function Example() {
+function Input() {
   const [items, setItems] = useState([]);
   const [item, setItem] = useState("");
 
@@ -14,34 +15,36 @@ function Example() {
     ]);
     setItem("");
   }
-  function Delete() {
-    setItems(item.name.remove());
-  }
-
+ 
+  const deleteItem = (index) => () =>
+    setItems((items) => items.filter((_, i) => i !== index));
   return (
     <>
+    
       <form onSubmit={Add}>
         <input
           name="item"
           type="text"
           value={item}
-          placeholder="Type hire"
           onChange={(item) => setItem(item.target.value)}
         />
-         <button onClick={Add}>Add</button>
+        <button onClick={Add}>Add</button>
       </form>
+      
       <ul>
-        {items.map((item) => (
-          <ol>
-            <li>
-            {item.name}
-            <button onCl ick={Delete}>-</button>
-            </li>
-          </ol>
-        ))}
+     
+        {items.map((it, index) => {
+        return (
+          <div key={it.id}>
+            {it.name} <button onClick={deleteItem(index)}>delete</button>
+          </div>
+        );
+      })}
+        
+ 
       </ul>
     </>
   );
 }
 
-export default Example;
+export default Input;
