@@ -35,7 +35,7 @@ function Example() {
           <ol>
             <li>
             {item.name}
-            <button onClick={Delete}>-</button>
+            <button onCl ick={Delete}>-</button>
             </li>
           </ol>
         ))}
