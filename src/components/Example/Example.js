@@ -36,7 +36,11 @@ function Input() {
         {items.map((it, index) => {
         return (
           <div key={it.id}>
-            {it.name} <button onClick={deleteItem(index)}>delete</button>
+            <ol>
+              <li>
+              {it.name} <button onClick={deleteItem(index)}>-</button>
+              </li>
+            </ol>
           </div>
         );
       })}
