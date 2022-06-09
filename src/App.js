@@ -81,12 +81,12 @@ export const App = () => {
                   <tr>
                     <th>Name:</th>
                     <th>Last Name:</th>
-                    <th>Grate</th>
+                    <th>Grate:</th>
                     <th>Delete</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <Todolist books={books} deleteBook={deleteBook}/>
+                  <Todolist books={books} deleteBook={deleteBook}/> 
                 </tbody>
               </table>
             </div>
